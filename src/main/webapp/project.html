@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+
+<title class="page-header text-center">Movie App</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"><</script>
+
+	 <script src="JS/wine.js"></script> 
+	
+	<!-- <link rel="stylesheet" type="text/css" href="css/NewFile.css"> -->
+
+</head>
+<body class="bg.info" ng-app="wineapp" ng-controller="winecontroller">
+
+	<nav class="navbar navbar-inverse navbar-fixed-top container-fluid">
+		<p class="navbar-text">{{navName}}</p>
+		<ul class="nav navbar-nav">
+			
+			<li><a href="#!wineQuiz">Wine Quiz</a></li>
+			<li><a href="#!create">Create</a></li>
+			<li><a href="#!wineSearch">Wine Search</a></li>
+			
+			
+			
+			
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+		<li><a href="#!adminSearch">Admin Search</a></li>
+			<li><a href="#!resume">Resume</a></li>
+			<li><a href="#!stack">Stack</a></li>
+		</ul>
+	</nav>
+	
+	<br>
+	<br>
+	<div ng-view></div>
+	
+</body>
+</html>

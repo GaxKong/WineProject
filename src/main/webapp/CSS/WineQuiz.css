@@ -1,0 +1,29 @@
+@CHARSET "ISO-8859-1";
+
+* {box-sizing: border-box;}
+
+.wrapper > div{
+	border-radius: 5px;
+	background-color: rgb(207,232,220);
+	padding: 1em;
+}
+
+.wrapper {
+
+	display: grid; 
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 100px 100px;
+	grid-gap: 10px;
+	text-align: center;
+	
+}
+
+body {
+    background: url('http://blog.hostbaby.com/wp-content/uploads/2013/07/scuffedstatic_blue_1920x1234.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;    
+    background-size: cover;
+   background-color: rgba(255, 255, 255, 0.5 );
+   background-blend-mode: lighten;
+}

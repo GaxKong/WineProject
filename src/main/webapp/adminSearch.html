@@ -1,0 +1,95 @@
+<br><br>
+	<div class="row">
+		<div class="col-sm-3 header">			
+			
+				<button type="button" ng-click="getFancySearch()" 
+					class="btn btn-success"> 
+					Search
+				</button>
+				<button type="button" ng-click="clearFancySearch()" 
+					class="btn btn-success"> 
+					Clear
+				</button>											
+		</div>		
+	</div>	
+		<div class="row">
+			<div class="col-sm-3">			
+				<table  class="table table-condensed">
+				<tr>
+					<td>
+						<label> Language:</label><br>
+						<label><input type="checkbox" ng-model="fancysearch.english" />
+						 English:
+						</label>
+						<label><input type="checkbox" ng-model="fancysearch.french" />
+						 French:
+						</label><br />
+						<label><input type="checkbox" ng-model="fancysearch.german" />
+						 German:
+						</label>
+						<label><input type="checkbox" ng-model="fancysearch.spanish" />
+						 Spanish:
+						</label>
+					</td>
+				</tr>
+				<tr>							
+					<td>
+						<label>Film Type:</label><br>
+						<label>
+							<input type="radio" ng-model="fancysearch.media" value="color"/>
+							Color
+						</label><br/>
+						<label>
+							<input type="radio" ng-model="fancysearch.media" value="blackandwhite"/>
+							Black and White
+						</label><br/>
+						<label>
+							<input type="radio" ng-model="fancysearch.media" value="colorized"/>
+							Colorized
+						</label>
+							
+					 </td>
+				 </tr>
+					<tr>
+						<td>
+							<label>Release Date Range:</label><br/>
+							<label>Start:</label><br/>
+   								<input type="date" ng-model="fancysearch.startdate"
+       								placeholder="yyyy-MM-dd" min="1950-01-01" max="2018-12-31"/><br/>
+   							<label>End:</label><br/>
+   								<input type="date" ng-model="fancysearch.enddate"
+       								placeholder="yyyy-MM-dd" min="1950-01-01" max="2018-12-31"/>
+						</td>
+					</tr>				
+			</table>				
+		</div>	
+		
+		<div class="col-sm-9">			
+			<table  class="table table-condensed">
+				<tr class='text-success'>
+					<th class="text-center col-sm-2">Wine Name</th>
+					<th class="text-center col-sm-2">Wine ID</th>
+					<th class="text-center col-sm-2">Chocolate</th>
+					<th class="text-center col-sm-2">Season</th>
+					<th class="text-center col-sm-2">Dinner</th>
+					<th class="text-center col-sm-2">Coffee</th>
+					<th class="text-center col-sm-2">Cheese</th>
+								
+				</tr>
+				<tr ng-repeat="wine in searchResults">
+					<td class="col-sm-2">{{wine.name}}</td>
+					<td class="col-sm-2 text-center">{{wine.wineID}}</td>
+					<td class="col-sm-2 text-center">{{wine.chocolate}}</td>
+					<td class="col-sm-2 text-center">{{wine.season}}</td>
+					<td class="col-sm-2 text-center">{{wine.dinner}}</td>
+					<td class="col-sm-2 text-center">{{wine.coffee}}</td>
+					<td class="col-sm-2 text-center">{{wine.cheese}}</td>
+					
+						
+				</tr>				
+			</table>				
+		</div>	
+							
+	</div>
+	
+</div>
