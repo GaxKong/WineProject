@@ -19,26 +19,27 @@ public class WineDaoImpl implements WineDao {
 	private static String sqlGetAllWines = "SELECT * " + " FROM wine;";
 	
 	private final static String sqlInsertWines = 
-			"  Insert INTO Wine " + "(name, " + "chocolate, " + "season)" + 
-			"  VALUES (?,?,?) "; //6 columns 
+			"  Insert INTO Wine " + "(Name , summary, wineID) " +
+			"  VALUES (?, ?, ?) "; //6 columns 
 	
-	private static String sqlUpdateByWineID =  "Update Wine " + "Set Name = ?, Chocolate = ?, Season = ? " + " WHERE WineID = ? " ;
+	private static String sqlUpdateByWineID =  "Update Wine " + "Set Name = ?,"+ " Summary = ?" + " WHERE WineID = ? " ;
 	
 	private static String sqlDeleteWine = " DELETE FROM WINE WHERE WineID = ?";
 	
-	private static String sqlGetByWineID =  "SELECT WineID, name, Chocolate, Season " + " FROM wine " + 
+	private static String sqlGetByWineID =  "SELECT * " + " FROM wine " + 
 			 " WHERE WineID = ? ";
 
 	
 	private Wine makeWine(ResultSet result) throws SQLException{
 		Wine wine = new Wine();
-		wine.setChocolate(result.getInt("chocolate"));
-		wine.setSeason(result.getInt("season"));
+//		wine.setChocolate(result.getInt("chocolate"));
+//		wine.setSeason(result.getInt("season"));
 		wine.setName(result.getString("name"));
 		wine.setWineID(result.getInt("wineID"));
-		wine.setDinner(result.getInt("dinner"));
-		wine.setCoffee(result.getInt("coffee"));
-		wine.setCheese(result.getInt("cheese"));
+		wine.setSummary(result.getString("summary"));
+//		wine.setDinner(result.getInt("dinner"));
+//		wine.setCoffee(result.getInt("coffee"));
+//		wine.setCheese(result.getInt("cheese"));
 		
 		return wine;
 	}
@@ -86,8 +87,10 @@ public class WineDaoImpl implements WineDao {
 			statement = conn.prepareStatement(sqlInsertWines);
 				
 			statement.setString(1, newWine.getName());
-			statement.setInt(2, newWine.getChocolate());
-			statement.setInt(3, newWine.getSeason());
+			statement.setString(2, newWine.getSummary());
+			statement.setInt(3, newWine.getWineID());
+//			statement.setInt(2, newWine.getChocolate());
+//			statement.setInt(3, newWine.getSeason());
 
 		
 			rowCount = statement.executeUpdate();			
@@ -132,9 +135,10 @@ public class WineDaoImpl implements WineDao {
 				statement = conn.prepareStatement(sqlUpdateByWineID);
 					
 				statement.setString(1, updateWine.getName());
-				statement.setInt(2, updateWine.getChocolate());
-				statement.setInt(3, updateWine.getSeason());
-				statement.setInt(4, updateWine.getWineID());
+//				statement.setInt(2, updateWine.getChocolate());
+//				statement.setInt(3, updateWine.getSeason());
+				statement.setInt(3, updateWine.getWineID());
+				statement.setString(2, updateWine.getSummary());
 
 			
 				rowCount = statement.executeUpdate();

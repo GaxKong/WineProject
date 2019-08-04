@@ -11,17 +11,34 @@
 </head>
 <body>
 <br><br>
-	<h1 class="text-center">QUESTION #1 </h1>
-	<div class ="wrapper ">
-		<div class="box1 btn" ng-click="qOneAnswer('1')" >One</div>
-		<div class="box2 btn" ng-click="qOneAnswer('2')">Two</div>
+	<h1 class="text-center">What type of chocolate do you like?</h1>
+	<!--  <div classwityh  ="wrapper ">
+		<div class="box1 btn" ng-click="qOneAnswer('1')" >Milk Chocolate</div>
+		<div class="box2 btn" ng-click="qOneAnswer('2')">Dark Chocolate</div>
 		<div class="box3 btn">Three</div>
 		<div class="box4 btn">Four</div>
-		<div class="box5 btn">Five</div>
-		<div class="box6 btn">Six</div>
 	
 	
 	
+	
+	
+	</div>-->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 btn btn-default btn-lg" ng-click="qOneAnswer('1')">Dark Chocolate</div>
+			<div class="col-md-6 btn btn-default btn-lg" ng-click="qOneAnswer('2')">Milk Chocolate</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6 btn btn-default btn-lg" ng-click="qOneAnswer('3')">White Chocolate</div>
+			<div class="col-md-6 btn btn-default btn-lg" ng-click="qOneAnswer('4')">Coffe Chocolate</div>
+		</div>
+	</div>
+		<br><br>
+	 <button type="button" class="btn btn-success" ng-click="getWinesByAnswer(answer)">Submit</button> 
+	 
+	<div>
+		<h1 class="text-center" ng-repeat="wine in wines"> Your Result is: {{wine.name}}</h1>
+		<h2 class="text-center" ng-repeat="wine in wines">{{wine.summary}}</h2>
 	
 	</div>
 </body>

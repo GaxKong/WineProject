@@ -7,7 +7,7 @@
 		<h5>Press 'Clear' to enter another wine.</h5>		
 		
 		<div class="header">
-			<button type="button" ng-click="postWine()" ng-disabled="!createForm.$valid || successfulInsert"
+			<button type="button" ng-click="postWine()" 
 				class="btn btn-success"> 
 				Save
 			</button>
@@ -23,8 +23,18 @@
 						<input id="name" type="text" ng-model="newWine.name" required size=40/>
 					</td>
 				</tr>
+				<tr>							
+					<td><label for="summary">summary:</label><br>
+						<input id="summary" type="text" ng-model="newWine.summary" required size=80/>
+					</td>
+				</tr>
+				<tr>							
+					<td><label for="wineID">wineID:</label><br>
+						<input id="wineID" type="text" ng-model="newWine.wineID" required size=40/>
+					</td>
+				</tr>
 				<tr>
-					<td>
+				<!-- <td>
 						<label for="chocolate">chocolate:</label><br>
 						<select ng-options="value for value in chocolate" required
 							ng-model="newWine.chocolate">
@@ -62,7 +72,7 @@
 							ng-model="newWine.cheese">
 						</select>
 					</td>
-				</tr>
+				</tr> -->
 				
 				<tr>
 					<td>

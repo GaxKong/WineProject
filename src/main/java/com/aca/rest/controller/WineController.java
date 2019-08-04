@@ -35,6 +35,14 @@ public class WineController {
 		return service.getAllWines();
 	}
 	
+	@GET
+	@Path("/{wineID}")
+	@Produces({MediaType.APPLICATION_JSON})
+	public List<Wine> getWineByWineID(@PathParam("wineID") int wineID){
+		
+		return service.getByWineID(wineID);
+	}
+	
 	@POST 
 	@Produces({MediaType.APPLICATION_JSON})
 	public Wine addWine(Wine newWine){

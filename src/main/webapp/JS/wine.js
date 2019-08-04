@@ -1,5 +1,9 @@
 var wineapp = angular.module('wineapp', ['ngRoute']);
 
+var score = 0;
+var result = null;
+
+
 wineapp.config(function($routeProvider){
 	$routeProvider
 	.when('/resume', {
@@ -31,10 +35,34 @@ wineapp.config(function($routeProvider){
 
 
 wineapp.controller('wineQuizController', function($scope, $http){
-	$scope.qOneAnswer = function(){
-		console.log();
-		
+	$scope.qOneAnswer = function(answer){
+		score = answer;
+		console.log(score);
 	}
+	
+	$scope.getWinesByAnswer = function(){
+		console.log(score);
+		
+		$scope.showQuiz = false;
+		
+		console.log('getWines');
+		$scope.wine = [{"name" : "retrieving wines..."}];
+		
+		$scope.showSearch = true;
+		$scope.showEditDelete = false;
+		
+		$http.get("/project/webapi/wines/" + score)
+		.then(function(response){
+			$scope.wines = response.data;
+			
+			console.log('number of wines: ' + $scope.wines[0].name);
+		}, function(response) {
+			console.log('error HTTP GET wines: ' + respone.status);
+			});
+		
+		
+			
+		}
 	
 })
 
