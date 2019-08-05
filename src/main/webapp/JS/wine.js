@@ -1,7 +1,7 @@
 var wineapp = angular.module('wineapp', ['ngRoute']);
 
 var score = 0;
-var result = null;
+
 
 
 wineapp.config(function($routeProvider){
@@ -37,6 +37,11 @@ wineapp.config(function($routeProvider){
 wineapp.controller('wineQuizController', function($scope, $http){
 	$scope.qOneAnswer = function(answer){
 		score = answer;
+		console.log(score);
+	}
+	$scope.qTwoAnswer = function(answer2){
+	
+		score += answer2;
 		console.log(score);
 	}
 	
