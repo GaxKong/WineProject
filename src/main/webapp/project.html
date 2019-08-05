@@ -22,7 +22,7 @@
 
 	 <script src="JS/wine.js"></script> 
 	
-	<!-- <link rel="stylesheet" type="text/css" href="css/NewFile.css"> -->
+ <link rel="stylesheet" type="text/css" href="CSS/WineQuiz.css">
 
 </head>
 <body class="bg.info" ng-app="wineapp" ng-controller="winecontroller">
@@ -32,17 +32,27 @@
 		<ul class="nav navbar-nav">
 			
 			<li><a href="#!wineQuiz">Wine Quiz</a></li>
-			<li><a href="#!create">Create</a></li>
-			<li><a href="#!wineSearch">Wine Search</a></li>
+		
+			<li><a href="#!resume">Resume</a></li>
+			<li><a href="#!stack">Stack</a></li>
 			
 			
 			
 			
 		</ul>
-		<ul class="nav navbar-nav navbar-right">
-		<li><a href="#!adminSearch">Admin Search</a></li>
-			<li><a href="#!resume">Resume</a></li>
-			<li><a href="#!stack">Stack</a></li>
+		<ul class="nav navbar-nav navbar-right ">
+			<li class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown"> Admin
+				<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="#!adminSearch">Admin Search</a></li>
+					<li><a href="#!resume">Resume</a></li>
+					<li><a href="#!stack">Stack</a></li>
+					<li><a href="#!create">Create</a></li>
+					<li><a href="#!wineSearch">Wine Search</a></li>
+					</ul>
+				
+			</li>
 		</ul>
 	</nav>
 	

@@ -1,6 +1,15 @@
 var wineapp = angular.module('wineapp', ['ngRoute']);
 
 var score = 0;
+var answer1 = 0;
+var answer2 = 0;
+var answer3 = 0;
+var answer4 = 0;
+var answer5 = 0;
+var answer6 = 0;
+var answer7 = 0;
+var answer8 = 0;
+
 
 
 
@@ -35,20 +44,26 @@ wineapp.config(function($routeProvider){
 
 
 wineapp.controller('wineQuizController', function($scope, $http){
+	$scope.showQuiz = true;
+	$scope.showResults = false;
+	
 	$scope.qOneAnswer = function(answer){
-		score = answer;
+		answer1 = answer;
 		console.log(score);
 	}
-	$scope.qTwoAnswer = function(answer2){
+	$scope.qTwoAnswer = function(answer){
 	
-		score += answer2;
+		answer2 = answer;
 		console.log(score);
 	}
 	
 	$scope.getWinesByAnswer = function(){
+		score = answer1 + answer2;
+		
 		console.log(score);
 		
 		$scope.showQuiz = false;
+		$scope.showResults = true;
 		
 		console.log('getWines');
 		$scope.wine = [{"name" : "retrieving wines..."}];
@@ -68,6 +83,11 @@ wineapp.controller('wineQuizController', function($scope, $http){
 		
 			
 		}
+	
+	$scope.returnToWineQuiz = function(){
+		$scope.showResults = false;
+		$scope.showQuiz = true;
+	}
 	
 })
 

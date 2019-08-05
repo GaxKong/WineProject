@@ -8,15 +8,7 @@
 	padding: 1em;
 }
 
-.wrapper {
 
-	display: grid; 
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-template-rows: 100px 100px;
-	grid-gap: 10px;
-	text-align: center;
-	
-}
 
 body {
     background: url('https://i0.wp.com/www.knoxalliance.store/wp-content/uploads/2017/05/light-color-background-images-for-website-top-hd-images-for-free-background-for-website-in-light-color-1-1024x640.jpg?ssl=1');
